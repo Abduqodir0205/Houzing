@@ -40,15 +40,22 @@
     padding: 0 10px;
     &-content {
       &-table {
-        table{
+        table {
           padding: 24px 16px;
         }
-        th:last-child{
-            display: none;
-        }
-        tr:not(:first-child){
-            
-            
+        // th:last-child {
+        //   display: none;
+        // }
+        
+        tr:not(:first-child) {
+          // td:first-child{
+          //   position: relative;
+          // }
+          td:last-child{
+            .table__trashEdit{
+              gap: 2px;
+            }
+          }
         }
       }
     }
@@ -70,41 +77,41 @@
       }
     }
   }
-  .my__properties{
-    &-content{
-        &-search{   
-            form{
-                display: none;
-            }
+  .my__properties {
+    &-content {
+      &-search {
+        form {
+          display: none;
         }
+      }
 
-        &-table{
-            tr:not(:first-child){
-              td:first-child{
-                padding: 0;
+      &-table {
+        tr:not(:first-child) {
+          td:first-child {
+            padding: 0;
+          }
+          .table__properties {
+            .table__properties-img {
+              background: red;
+              width: 91px;
+              height: 91px;
+            }
+            &-forSale {
+              display: none;
+            }
+            .table__properties-date {
+              width: 172px;
+              h1,
+              h2 {
+                font-size: 12px;
               }
-                .table__properties{
-
-                    .table__properties-img{
-                        background: red;
-                        width: 91px;
-                        height: 91px;
-                    }
-                    &-forSale{
-                      display: none;
-                    }
-                    .table__properties-date{
-                      width: 172px;
-                      h1,h2{
-                        font-size: 12px;
-                      }
-                      p{
-                        margin: 0;
-                      }
-                    } 
-                }
+              p {
+                margin: 0;
+              }
             }
+          }
         }
+      }
     }
   }
 }
