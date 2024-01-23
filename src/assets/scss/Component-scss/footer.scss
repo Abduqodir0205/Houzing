@@ -1,0 +1,114 @@
+footer {
+  background: var(--text-1, #0d263b);
+  .footer__content {
+    padding: 48px 15px;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    justify-content: space-between;
+    h2 {
+      padding-bottom: 32px;
+      color: var(--Color-5, #fff);
+
+      /* Paragraph/Medium/Semibold */
+      font-family: Montserrat;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 24px; /* 150% */
+    }
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      li:hover{
+        cursor: pointer;
+      }
+      li {
+        display: flex;
+        align-items: center;
+        gap: 21px;
+        span {
+          width: 36px;
+          height: 36px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          border-radius: 3px;
+          //     border-radius: 3px;
+          //     opacity: 0.1;
+          //     background: var(--Color-5, #FFF);
+        }
+        span:hover {
+            opacity: 0.8;
+          background: var(--Color-5, rgb(95, 95, 95));
+        }
+        a {
+          width: 256px;
+          color: var(--Color-5, #fff);
+
+          /* Paragraph/Small/Regular */
+          font-family: Montserrat;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px; /* 142.857% */
+          text-decoration: none;
+        }
+        color: var(--Color-5, #fff);
+
+        /* Paragraph/Small/Regular */
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+      }
+    }
+    ul:first-child {
+      li:last-child {
+      }
+    }
+  }
+  hr{
+  border: none;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+  .footer__contentDate{
+    padding: 16px 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    justify-content: space-between;
+    &-copyright{
+      display: flex;
+      align-items: center;
+      gap: 73px;
+      p{
+        color: var(--White, #FFF);
+
+        /* Paragraph/Small/Regular */
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+      }
+      div{
+        width: 45px;
+        height: 45px;
+        flex-shrink: 0;
+        border-radius: 3px;
+        background: var(--Color-1, #0061DF);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

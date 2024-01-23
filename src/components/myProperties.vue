@@ -72,7 +72,7 @@ export default {
   name: "Table",
   data() {
     return {
-      elementDel: true,
+      elementDel: false,
       search: "",
       items: [
         {
@@ -104,7 +104,7 @@ export default {
           del_prise: "$4,800/mo",
           new_prise: "$10,500/mo",
           for_sale: "FOR SALE",
-          date_published: "18 January 2024",
+          date_published: "18 January",
           status: "Pending",
           view: 1299,
         },
@@ -119,7 +119,11 @@ export default {
   methods:{
     removeTodo(item) {
       // console.log(this.items.length);
-      this.items = this.items.filter((t) => t !== item)
+      setTimeout(() => {
+        this.items = this.items.filter((t) => t !== item)
+        
+      	// this.removeTodo()
+      }, 300)
     },
     
   }
