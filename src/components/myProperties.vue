@@ -9,7 +9,9 @@
           </form>
         </div>
         <div class="my__properties-content-table">
-          <p v-if="items.length <= 0">Data not available!</p>
+          <transition-group tag="p"  name="fade" v-if="items.length <= 0">
+            <p>Data not available!</p>
+          </transition-group>
           <table v-else>
             <tr>
               <th>Listing Title</th>
@@ -18,47 +20,60 @@
               <th>View</th>
               <th>Action</th>
             </tr>
-            <tr v-for="(item, i) in filteredItems" :key="item.id">
-              <td>
-                <div class="table__properties">
-                  <div class="table__properties-img">
-                    <span>FEATURED</span>
-                  </div>
+            <tr v-for="(item, i) in filteredItems" :key="item">
+              <transition-group tag="td"  name="fade" class="containerEl">
+                <td>
+                  <div class="table__properties">
+                    <div class="table__properties-img">
+                      <span>FEATURED</span>
+                    </div>
 
-                  <div class="table__properties-date">
-                    <h1>{{ item.title }}</h1>
-                    <h2>{{ item.location }}</h2>
-                    <p>{{ item.del_prise }}</p>
-                    <h1>{{ item.new_prise }}</h1>
+                    <div class="table__properties-date">
+                      <h1>{{ item.title }}</h1>
+                      <h2>{{ item.location }}</h2>
+                      <p>{{ item.del_prise }}</p>
+                      <h1>{{ item.new_prise }}</h1>
+                    </div>
+                    <div class="table__properties-forSale">
+                      <span>{{ item.for_sale }}</span>
+                    </div>
                   </div>
-                  <div class="table__properties-forSale">
-                    <span>{{ item.for_sale }}</span>
+                </td>
+              </transition-group>
+
+              <transition-group tag="td"  name="fade" class="containerEl">
+                <td>
+                  <p>{{ item.date_published }}</p>
+                </td>
+              </transition-group>
+
+              <transition-group tag="td"  name="fade" class="containerEl">
+                <td>
+                  <p>{{ item.status }}</p>
+                </td>
+              </transition-group>
+
+              <transition-group tag="td"  name="fade" class="containerEl">
+                <td>
+                  <p>{{ item.view }}</p>
+                </td>
+              </transition-group>
+
+              <transition-group tag="td"  name="fade" class="containerEl">
+                <td>
+                  <div class="table__trashEdit">
+                    <div class="table__trashEdit-parent">
+                      <img src="../assets/images/svg/edit.svg" alt="" />
+                    </div>
+                    <div
+                      class="table__trashEdit-parent"
+                      @click="removeTodo(item)"
+                    >
+                      <img src="../assets/images/svg/trash.svg" alt="" />
+                    </div>
                   </div>
-                </div>
-              </td>
-
-              <td>
-                <p>{{ item.date_published }}</p>
-              </td>
-
-              <td>
-                <p>{{ item.status }}</p>
-              </td>
-
-              <td>
-                <p>{{ item.view }}</p>
-              </td>
-
-              <td>
-                <div class="table__trashEdit">
-                  <div class="table__trashEdit-parent">
-                    <img src="../assets/images/svg/edit.svg" alt="" />
-                  </div>
-                  <div class="table__trashEdit-parent" @click="removeTodo(item)">
-                    <img src="../assets/images/svg/trash.svg" alt="" />
-                  </div>
-                </div>
-              </td>
+                </td>
+              </transition-group>
             </tr>
           </table>
         </div>
@@ -111,23 +126,59 @@ export default {
       ],
     };
   },
-  computed:{
-    filteredItems(){
-      return this.items.filter(item => item.title.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()))
-    }
+  computed: {
+    filteredItems() {
+      return this.items.filter((item) =>
+        item.title.toLocaleLowerCase().includes(this.search.toLocaleLowerCase())
+      );
+    },
   },
-  methods:{
+  methods: {
     removeTodo(item) {
       // console.log(this.items.length);
-      setTimeout(() => {
-        this.items = this.items.filter((t) => t !== item)
-        
-      	// this.removeTodo()
-      }, 300)
+      // setTimeout(() => {
+        const i = this.items.indexOf(item);
+        if (i > -1) {
+          this.items.splice(i, 1);
+          // this.items = this.items.filter((t) => t !== item);
+        }
+        // this.removeTodo()
+      // }, 100);
     },
-    
-  }
-
+  },
 };
 </script>
-<style lang=""></style>
+<style>
+.containerEl {
+  position: relative;
+  padding: 0;
+}
+
+.item {
+  width: 100%;
+  height: 30px;
+  background-color: #f3f3f3;
+  border: 1px solid #666;
+  box-sizing: border-box;
+}
+.fade-move,
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+/* 2. declare enter from and leave to state */
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+  transform: scaleY(0.01) translate(30px, 0);
+}
+
+/* 3. ensure leaving items are taken out of layout flow so that moving
+      animations can be calculated correctly. */
+.fade-leave-active {
+  position: absolute;
+}
+
+
+</style>

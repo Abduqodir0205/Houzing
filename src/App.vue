@@ -1,17 +1,13 @@
 <template>
   <div>
-    <Footer/>
+    <HomeView/>
   </div>
 </template>
 <script>
-// import navbar from './components/navbar.vue';
-// import myProperties from './components/myProperties.vue';
-import Footer from './components/footer.vue';
+import HomeView from './layouts/HomeView.vue';
 export default {
   components:{
-    // navbar,
-    // myProperties,
-    Footer,
+    HomeView,
   }
 }
 </script>
