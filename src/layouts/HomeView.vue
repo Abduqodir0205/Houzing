@@ -2,7 +2,8 @@
   <div class="view">
     <navbar />
     <div class="router">
-      <myProperties />
+      <!-- <myProperties /> -->
+      <router-view></router-view>
     </div>
     <Footer> </Footer>
   </div>

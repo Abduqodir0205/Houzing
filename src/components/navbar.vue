@@ -10,8 +10,8 @@
         </div>
         <div class="nav__content-list">
           <ul>
-            <li><a class="web__a-style" href="#">Home</a></li>
-            <li><a class="web__a-style" href="#">Properties</a></li>
+            <li><router-link to="/home"><a class="web__a-style" href="#">Home</a></router-link></li>
+            <li><router-link :to="{name:'properties'}"><a class="web__a-style" href="#">Properties</a></router-link></li>
             <li><a class="web__a-style" href="#">Contacts</a></li>
           </ul>
           <div class="nav__content-list-userIcon">
