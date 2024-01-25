@@ -46,13 +46,13 @@
         // th:last-child {
         //   display: none;
         // }
-        
+
         tr:not(:first-child) {
           // td:first-child{
           //   position: relative;
           // }
-          td:last-child{
-            .table__trashEdit{
+          td:last-child {
+            .table__trashEdit {
               gap: 2px;
             }
           }
@@ -114,6 +114,33 @@
       }
     }
   }
+
+  main {
+    .main-properties__content {
+      &-contactInformation,
+      &-additional,
+      &-price,
+      &-location {
+        
+        form{
+          input,
+            textarea,
+            select {
+              width: 358px;
+            }
+        }
+        form {
+          div {
+            input,
+            textarea,
+            select {
+              width: 358px !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 @media (max-width: 440px) {
   .container {
@@ -147,27 +174,27 @@
   .my__properties {
     &-content {
       &-search {
-        h1{
+        h1 {
           font-size: 22px;
         }
         form {
           display: none;
         }
       }
-      
+
       &-table {
-        table{
+        table {
           // width: 100%;
           padding: 4px;
-          tr{
+          tr {
             position: relative;
-            th{
-                font-size: 14px;
-              }
+            th {
+              font-size: 14px;
+            }
           }
         }
-        tr:first-child{
-          th:last-child{
+        tr:first-child {
+          th:last-child {
             display: none;
           }
         }
@@ -175,11 +202,11 @@
           td:first-child {
             padding: 0;
           }
-          td:last-child{
+          td:last-child {
             // display:none;
             width: 10px;
           }
-          .table__trashEdit{
+          .table__trashEdit {
             // display: ;
             position: absolute;
             top: 50px;
@@ -189,7 +216,7 @@
             .table__properties-img {
               width: 71px;
               height: 71px;
-              span{
+              span {
                 font-size: 8px;
                 width: 60px;
                 padding: 5px;
@@ -215,24 +242,121 @@
     }
   }
 
-  footer {
-    .footer__content {
-      h2{
-        font-size: 15px;
-      }        
-      ul {
-        li {
-          font-size: 12px;
+  main {
+    .main-properties{
+      padding: 10px !important;
+    }
+    .main-properties__content {
+      h1 {
+        font-size: 20px;
+      }
+      h2 {
+        font-size: 16px;
+      }
+      label,
+      input,
+      select,
+      textarea {
+        font-size: 10px;
+      }
+      &-contactInformation {
+        form {
           
-          a {
-            width: 100%;
-            font-size: 12px;
+          span {
+            flex-wrap: wrap;
           }
-
         }
       }
-
+      &-contactInformation,
+      &-additional,
+      &-price,
+      &-location {
+        iframe{
+          height: 170px;
+        }
+        form{
+          input,
+            textarea,
+            select {
+              width: 290px;
+            }
+        }
+        form {
+          div {
+            input,
+            textarea,
+            select {
+              width: 290px !important;
+            }
+          }
+        }
+      }
     }
   }
-  
+
+  footer {
+    
+    .footer__content {
+      h2{
+        font-size: 14px;
+      }
+      ul {
+        li {
+          font-size: 10px;
+
+          a {
+            width: 100%;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+    .footer__contentDate-copyright{
+      p{
+        font-size: 10px;
+      }
+      div{
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 370px){
+  nav{
+    .nav__content{
+      &-logo{
+        img{
+          transform: translateX(-40px);
+        }
+      }
+    }
+  }
+  main {
+    .main-properties__content {
+      &-contactInformation,
+      &-additional,
+      &-price,
+      &-location {
+        
+        form{
+          input,
+            textarea,
+            select {
+              width: 220px;
+            }
+        }
+        form {
+          div {
+            input,
+            textarea,
+            select {
+              width: 228px !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }
