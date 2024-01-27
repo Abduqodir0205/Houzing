@@ -115,103 +115,193 @@ main {
       }
     }
 
-    &-price{
-        form{
-            margin-top: 44px;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 44px 20px;
-            input{
-                width: 550px;
-            }
+    &-price {
+      form {
+        margin-top: 44px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 44px 20px;
+        input {
+          width: 550px;
         }
+      }
     }
 
-    &-location{
-        form{
-            margin-top: 44px;
-            display: flex;
-            flex-direction: column; 
-            flex-wrap: wrap; 
-            gap: 44px 20px;          
-            div{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            flex-wrap: wrap; 
+    &-location {
+      form {
+        margin-top: 44px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 44px 20px;
+        div {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
 
-                gap: 20px;
-                input{
-                    width: 550px;
-                }
-            }
-            .main-properties__content-location-mapInput{
-                input{
-                    width: 100%;
-                }
-            }
+          gap: 20px;
+          input {
+            width: 550px;
+          }
         }
-        &-map{
-            // width: 100px;
-            iframe{
-                width: 100%;
-            }
+        .main-properties__content-location-mapInput {
+          input {
+            width: 100%;
+          }
         }
+      }
+      &-map {
+        // width: 100px;
+        iframe {
+          width: 100%;
+        }
+      }
     }
 
+    &-media {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+      gap: 44px;
+       label {
+          /* Style as you please, it will become the visible UI component. */
+          display: flex;
+          width: 150px;
+          padding: 12px 40px;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          border-radius: 2px;
+          border: 1px solid var(--input-border-hover-color);
+          color: var(--input-border-hover-color);
 
-    &-media{
-        button{
+          /* Paragraph/Small/Regular */
+          font-family: Montserrat;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px; /* 142.857% */
+        }
+        #upload-photo:hover, label:hover{
+          cursor: pointer;
+        }
+
+        #upload-photo {
+          opacity: 0;
+          position: relative;
+          z-index: 1;
+          width: 150px;
+          height: 47px;
+        }
+      button {
+        display: flex;
+        width: 150px;
+        padding: 12px 40px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 2px;
+        border: 1px solid var(--input-border-hover-color);
+        color: var(--input-border-hover-color);
+
+        /* Paragraph/Small/Regular */
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      p {
+        color: var(--input-plasholder);
+
+        /* Paragraph/Small/Regular */
+        font-family: Montserrat;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 142.857% */
+      }
+
+      &-images {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+        div {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          flex-wrap: wrap;
+          span{
             display: flex;
-            width: 150px;
-            padding: 12px 40px;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            border-radius: 2px;
-            border: 1px solid var(--input-border-hover-color);
-            color: var(--input-border-hover-color);
-
-            /* Paragraph/Small/Regular */
-            font-family: Montserrat;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 20px; /* 142.857% */
-        }
-        button:hover{
-            cursor: pointer;
-        }
-        p{
-            color: var(--input-plasholder);
-
-            /* Paragraph/Small/Regular */
-            font-family: Montserrat;
-            font-size: 14px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 20px; /* 142.857% */
-        }
-        div:first-child{
-            display: flex;
-            align-items: center;
             flex-wrap: wrap;
             gap: 20px;
-            span{
-                width: 150px;
-                height: 150px;
-                flex-shrink: 0;
-                border-radius: 3px;
-                background: #C4C4C4;
+          }
+          div {
+            width: 150px;
+            height: 150px;
+            flex-shrink: 0;
+            border-radius: 3px;
+            background: #c4c4c4;
+            img{
+              width: inherit;
+              height: inherit;
+              object-fit: contain;
+              object-position: center;
             }
+          }
         }
-        &-attachment{
-            span{
-                display: flex;
-                align-items: center;
+        position: relative;
+       
+      }
+      &-gallary {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 30px;
+        
+        &-img{
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          flex-wrap: wrap;
+          div{
+            width: 150px;
+            height: 150px;
+            border-radius: 3px;
+            background: #c4c4c4;
+            // margin: 20px 0;
+            img{
+              width: inherit;
+              height: inherit;
+              object-fit: contain;
+              object-position: center;
             }
+          }
         }
+      }
+
+      &-attachment {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        span {
+          display: flex;
+          align-items: center;
+          img{
+            margin-right: 10px;
+          }
+        }
+        span:hover{
+          cursor: pointer;
+        }
+      }
     }
   }
 }
+

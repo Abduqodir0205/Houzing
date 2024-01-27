@@ -139,6 +139,21 @@
           }
         }
       }
+
+      &-media{
+        align-items: center;
+        &-images{
+          align-items: center;
+          div{
+            justify-content: center;
+            span{
+              justify-content: center;
+            }
+          }
+        }
+      }
+
+      
     }
   }
 }
